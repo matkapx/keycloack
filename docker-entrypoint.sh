@@ -96,7 +96,7 @@ SYS_PROPS+=" $BIND_OPTS"
 
 # If the server configuration parameter is not present, append the HA profile.
 if echo "$@" | egrep -v -- '-c |-c=|--server-config |--server-config='; then
-    SYS_PROPS+=" -c=standalone-ha.xml"
+    SYS_PROPS+=" -c=standalone.xml"
 fi
 
 ############
@@ -181,13 +181,12 @@ if [ "$DB_VENDOR" != "h2" ]; then
 fi
 
 /opt/jboss/tools/x509.sh
-/opt/jboss/tools/jgroups.sh $JGROUPS_DISCOVERY_PROTOCOL $JGROUPS_DISCOVERY_PROPERTIES
-/opt/jboss/tools/autorun.sh
+#/opt/jboss/tools/jgroups.sh $JGROUPS_DISCOVERY_PROTOCOL $JGROUPS_DISCOVERY_PROPERTIES
+#/opt/jboss/tools/autorun.sh
 
 ##################
 # Start Keycloak #
 ##################
 
-exec /opt/jboss/keycloak/bin/standalone.sh
-#exec /opt/jboss/keycloak/bin/standalone.sh $SYS_PROPS $@ -Djboss.http.port=$PORT
+exec /opt/jboss/keycloak/bin/standalone.sh $SYS_PROPS $@ -Djboss.http.port=$PORT
 exit $?
