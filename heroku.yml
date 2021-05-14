@@ -1,7 +1,7 @@
 setup:
     addons:
         - plan: heroku-postgresql:hobby-dev
-          as: HEROKU_POSTGRESQL_AMBER_URL
+          as: DATABASE
 build:
     docker:
         worker: Dockerfile
