@@ -185,7 +185,7 @@ fi
 /opt/jboss/tools/autorun.sh
 
 ##################
-# Start Keycloak #
+# Start Keycloak ###
 ##################
 
 exec /opt/jboss/keycloak/bin/standalone.sh $SYS_PROPS $@ -Djboss.http.port=$PORT 
