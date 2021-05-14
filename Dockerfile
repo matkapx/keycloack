@@ -1,4 +1,4 @@
-FROM jboss/keycloak:8.0.2
+FROM jboss/keycloak:latest
 
 COPY docker-entrypoint.sh /opt/jboss/tools
 
