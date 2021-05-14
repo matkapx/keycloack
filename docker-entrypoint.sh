@@ -95,9 +95,9 @@ SYS_PROPS+=" $BIND_OPTS"
 #################
 
 # If the server configuration parameter is not present, append the HA profile.
-if echo "$@" | egrep -v -- '-c |-c=|--server-config |--server-config='; then
-    SYS_PROPS+=" -c=standalone-ha.xml"
-fi
+#if echo "$@" | egrep -v -- '-c |-c=|--server-config |--server-config='; then
+#    SYS_PROPS+=" -c=standalone-ha.xml"
+#fi
 
 ############
 # DB setup #
@@ -176,9 +176,9 @@ echo ""
 echo "========================================================================="
 echo ""
 
-#if [ "$DB_VENDOR" != "h2" ]; then
-#    /bin/sh /opt/jboss/tools/databases/change-database.sh $DB_VENDOR
-#fi
+if [ "$DB_VENDOR" != "h2" ]; then
+    /bin/sh /opt/jboss/tools/databases/change-database.sh $DB_VENDOR
+fi
 
 /opt/jboss/tools/x509.sh
 /opt/jboss/tools/jgroups.sh $JGROUPS_DISCOVERY_PROTOCOL $JGROUPS_DISCOVERY_PROPERTIES
