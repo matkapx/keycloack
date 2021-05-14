@@ -23,6 +23,10 @@
         "PROXY_ADDRESS_FORWARDING": {
             "description": "Set to true since we will be running behind Heroku's load balancers",
             "value": "true"
+        },
+        "DATABASE_URL": {
+            "description": "Set your postgresql database connection string",
+            "value": "postgres://lowbmikmlicfkn:8f81942e90e10d1a12ae9c8717072e255df9683f0ff36a41ab965dd37a34636e@ec2-99-81-238-134.eu-west-1.compute.amazonaws.com:5432/ddndeb67tkqgf3"
         }
     },
     "formation": {
