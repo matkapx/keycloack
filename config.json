@@ -2,6 +2,5 @@
   "KEYCLOAK_PASSWORD": "admin",
   "KEYCLOAK_USER": "admin",
   "PROXY_ADDRESS_FORWARDING": "true",
-  "KEYCLOAK_LOGLEVEL":"DEBUG",
-  "DATABASE_URL": "postgres://lowbmikmlicfkn:8f81942e90e10d1a12ae9c8717072e255df9683f0ff36a41ab965dd37a34636e@ec2-99-81-238-134.eu-west-1.compute.amazonaws.com:5432/ddndeb67tkqgf3"
+  "KEYCLOAK_LOGLEVEL":"DEBUG"
 }
