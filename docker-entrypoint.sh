@@ -95,9 +95,9 @@ SYS_PROPS+=" $BIND_OPTS"
 #################
 
 # If the server configuration parameter is not present, append the HA profile.
-#if echo "$@" | egrep -v -- '-c |-c=|--server-config |--server-config='; then
-#    SYS_PROPS+=" -c=standalone-ha.xml"
-#fi
+if echo "$@" | egrep -v -- '-c |-c=|--server-config |--server-config='; then
+    SYS_PROPS+=" -c=standalone.xml"
+fi
 
 ############
 # DB setup #
