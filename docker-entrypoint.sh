@@ -95,9 +95,9 @@ SYS_PROPS+=" $BIND_OPTS"
 #################
 
 # If the server configuration parameter is not present, append the HA profile.
-if echo "$@" | egrep -v -- '-c |-c=|--server-config |--server-config='; then
-    SYS_PROPS+=" -c=standalone.xml"
-fi
+#if echo "$@" | egrep -v -- '-c |-c=|--server-config |--server-config='; then
+#    SYS_PROPS+=" -c=standalone.xml"
+#fi
 
 ############
 # DB setup #
@@ -187,7 +187,7 @@ fi
 
 echo "========================================================================="
 echo ""
-echo "  Using $SYS_PROPS sysProps"
+echo "  Using $SYS_PROPS sysProps $@ adn params"
 echo ""
 echo "========================================================================="
 echo ""
@@ -199,5 +199,5 @@ echo ""
 # Start Keycloak ###
 ##################
 
-exec /opt/jboss/keycloak/bin/standalone.sh $SYS_PROPS -Djboss.http.port=$PORT
+exec /opt/jboss/keycloak/bin/standalone.sh $SYS_PROPS $@ -Djboss.http.port=$PORT
 exit $?
